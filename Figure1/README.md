@@ -2,6 +2,8 @@
 
 This directory contains the processed input data and analysis code used to reproduce **Figure 1**, **Appendix Figure 1**, and **Appendix Table 1** of the manuscript.
 
+---
+
 ## Files
 
 ### `figure1_input.nc`
@@ -37,9 +39,46 @@ The script reproduces:
 - **Appendix Figure 1** — additional diagnostics associated with the moving-window regression analysis.
 - **Appendix Table 1** — statistical results associated with the regression analysis.
 
+---
+
 ## Reproducing the analysis
 
 From this directory, run:
 
 ```bash
 python figure1_analysis.py --input figure1_input.nc
+```
+
+The script writes the reproduced figures, table, and corresponding source-data files to the output directory.
+
+---
+
+## Software requirements
+
+The analysis was implemented in Python. The principal required packages are:
+
+- NumPy
+- pandas
+- xarray
+- SciPy
+- statsmodels
+- Matplotlib
+- netCDF4
+
+Package versions used for the final analysis can be found in the repository-level environment information, where available.
+
+---
+
+## Data provenance
+
+`figure1_input.nc` contains processed time series derived from the observational and ocean reanalysis datasets described in the manuscript. These processed data are provided to facilitate direct reproduction of the published statistical analyses.
+
+The original datasets remain subject to the terms and conditions of their respective data providers. Full dataset descriptions, references, and availability information are provided in the manuscript and its Data Availability statement.
+
+---
+
+## Notes
+
+The processing definitions, spatial domains, seasonal averaging, detrending and standardization procedures, moving-window regression framework, and statistical significance tests follow those described in the Methods of the manuscript.
+
+This directory is intended to reproduce the published analysis from the processed inputs rather than to reproduce each upstream reanalysis product from its original gridded fields.
