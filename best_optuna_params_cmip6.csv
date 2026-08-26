@@ -1,0 +1,2 @@
+lstm_units,dense_units,dropout_rate,learning_rate,batch_size,epochs,optimizer,l2_reg,num_heads,key_dim
+32,48,0.30000000000000004,0.00011468033553535237,16,160,Adam,1e-05,2,16
