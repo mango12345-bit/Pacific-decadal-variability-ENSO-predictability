@@ -47,6 +47,7 @@ DL_PDO/
     └── leadwise_delta_alpha_summary
 
 ## Training data
+```text
 The data/ directory contains the processed climate-index time series used
 as inputs to the DL-PDO framework.
 
