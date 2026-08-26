@@ -46,11 +46,11 @@ DL_PDO/
     ├── ensemble_member_source_bootstrap_metadata.csv
     └── leadwise_delta_alpha_summary
 
-Training data
+## Training data
 The data/ directory contains the processed climate-index time series used
 as inputs to the DL-PDO framework.
 
-CMIP6 data
+## CMIP6 data
 The following files contain indices derived from the CMIP6 simulations:
 
 AMO_index_model.nc — AMO index
@@ -62,7 +62,7 @@ ssha_model_index_cp.nc — central-Pacific SSHA index
 These processed CMIP6 time series are used for model pretraining and for
 constructing the model-bootstrap ensemble.
 
-Observational data
+## Observational data
 The following files contain the corresponding observational indices:
 
 AMO_index_1854-2025.nc — observational AMO index
@@ -79,7 +79,7 @@ repository so that the DL-PDO training procedure can be reproduced without
 requiring users to reconstruct all climate indices from the original gridded
 datasets.
 
-Model architecture and training
+## Model architecture and training
 
 The DL-PDO model is a residual sequence-to-sequence neural network with
 attention.
@@ -105,7 +105,7 @@ the near-term PDO prediction.
 Full methodological details are provided in the Methods section of the
 manuscript.
 
-Training script
+## Training script
 
 dl_pdo_train.py implements the training, transfer-learning, ensemble,
 calibration, evaluation, and prediction workflow used in the study.
@@ -128,7 +128,7 @@ bit-for-bit across different hardware, TensorFlow versions, CUDA versions,
 or GPU configurations. The trained models used for the manuscript are
 therefore provided separately in the models/ directory.
 
-Selected hyperparameters
+## Selected hyperparameters
 metadata/best_optuna_params_cmip6.csv contains the hyperparameters selected
 from the CMIP6-based Optuna optimization and used in the final training
 workflow.
@@ -137,7 +137,7 @@ Providing these selected hyperparameters allows the final ensemble training
 to be repeated without requiring users to rerun the complete hyperparameter
 search.
 
-Ensemble metadata and calibration
+## Ensemble metadata and calibration
 metadata/ensemble_member_source_bootstrap_metadata.csv records information
 for each ensemble member, including the CMIP6 models selected during bootstrap
 resampling and the member-specific lead-wise calibration coefficients.
@@ -148,7 +148,7 @@ change in PDO relative to the persistence baseline.
 metadata/leadwise_delta_alpha_summary.csv provides a summary of these
 lead-dependent calibration coefficients across the ensemble.
 
-Trained models
+## Trained models
 
 The models/ directory contains the 20 final observation-fine-tuned ensemble
 members used in the manuscript:
@@ -163,7 +163,7 @@ They are provided to preserve the exact trained model states used in the
 study and to avoid requiring users to repeat the computationally expensive
 training procedure solely to inspect the final models.
 
-Software requirements
+## Software requirements
 
 The DL-PDO framework was implemented in Python. The principal required
 packages are:
